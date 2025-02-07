@@ -1,0 +1,133 @@
+* {
+    border-radius: 30px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input {
+    padding: 0;
+    padding-block: 0;
+    padding-inline: 0;
+}
+
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+p {
+    margin: 0;
+}
+
+
+:root {
+    --main-background-color: aquamarine;
+    --main-border-color: #9f8461;
+    --main-border: 2px dashed var(--main-border-color);
+    --main-font-color: #776247;
+}
+
+.main-container {
+    margin: 0 auto;
+    margin-top: 60px;
+    padding: 10px;
+    height: fit-content;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-background-color);
+}
+
+.top-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: inherit;
+}
+
+.input-number {
+    flex: 1;
+    max-width: 269px;
+    height: 90%;
+    font-size: 40px;
+    background-color: inherit;
+    padding: 0 10px;
+    border: none;
+    outline: var(--main-border);
+    color: var(--main-font-color);
+}
+
+.select-operation {
+    flex: 1;
+    cursor: pointer;
+    font-size: 34px;
+    color: var(--main-font-color);
+    border: none;
+    outline: var(--main-border);
+    background-color: inherit;
+    padding: 0 0 0 20px;
+    text-align: left;
+    max-width: 100px;
+    background-image: url(../assets/dropDown.svg);
+    background-repeat: no-repeat;
+    background-position-x: 80%;
+    background-position-y: 80%;
+}
+
+.bottom-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+    justify-content: space-around;
+}
+
+.calc-result {
+    cursor: pointer;
+    width: 30%;
+    height: 40px;
+    border: none;
+    outline: var(--main-border);
+    background-color: inherit;
+    font-size: 24px;
+    color: var(--main-font-color);
+    transition: all .5s ease-in-out;
+}
+
+.calc-result:hover {
+    background: var(--main-border-color);
+}
+
+.result-container {
+    width: 100%;
+    height: 120px;
+    border: var(--main-border);
+    background-color: inherit;
+    font-size: 55px;
+    color: var(--main-font-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    flex-direction: column;
+}
+
+.prev-result {
+    font-size: 30px;
+    color: var(--main-font-color);
+    filter: opacity(0.85);
+}

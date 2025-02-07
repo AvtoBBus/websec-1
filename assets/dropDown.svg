@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" xml:space="preserve" width="20" height="20">
+    <defs>
+        <pattern id="arrow" patternUnits="userSpaceOnUse" width="20" height="20" style="stroke: #776247;">
+            <line x1="0" y1="0" x2="10" y2="10" />
+            <circle cx="10" cy="9.9" r="0.1" />
+            <line x1="10" y1="10" x2="20" y2="0" />
+        </pattern>
+    </defs>
+    <rect x="0" y="0" width="100%" height="100%" fill="url(#arrow)" />
+</svg>
