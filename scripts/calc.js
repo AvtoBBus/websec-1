@@ -56,7 +56,9 @@ function onClickHandler() {
             console.log(resultStr);
             setResult(resultStr);
         }
-
+        else {
+            alert('Заполните все поля!')
+        }
 
     }
 }
