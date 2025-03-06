@@ -131,3 +131,31 @@ p {
     color: var(--main-font-color);
     filter: opacity(0.85);
 }
+
+
+@media (max-width: 750px) {
+    .top-content {
+        flex-direction: column;
+        height: 250px;
+    }
+
+    .input-number {
+        max-width: initial;
+        width: calc(100% - 20px);
+        padding: 0 10px;
+        max-height: 35%;
+    }
+
+    .select-operation {
+        flex: initial;
+        width: 100px;
+    }
+
+    .calc-result {
+        width: initial;
+    }
+
+    .result-container {
+        font-size: 42px;
+    }
+}

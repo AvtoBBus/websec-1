@@ -8,17 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
         prevResultElem.innerHTML = window.localStorage.getItem('previousResult');
 })
 
-const loggingInfo = (
-    firstNumber,
-    operation,
-    secondNumber,
-    result
-) => {
-    const log = `${firstNumber} ${operation} ${secondNumber} = ${result}`;
-    console.log(log);
-    return log;
-}
-
 function onClickHandler() {
     const firstNumElem = document.querySelector("#first-number");
     const secondNumElem = document.querySelector("#second-number");
@@ -31,36 +20,44 @@ function onClickHandler() {
 
         const firstNumber = Number.parseFloat(firstNumElem.value);
         const secondNumber = Number.parseFloat(secondNumElem.value);
-        const operation = operationElem.value;
 
-        if (operation === "/" || operation === "%") {
-            if (secondNumber === 0 || secondNumber === 0.0) {
-                alert("Division by zero");
-                return;
+        if (!Number.isNaN(firstNumber) && !Number.isNaN(secondNumber)) {
+            const operation = operationElem.value;
+
+            if (operation === "/" || operation === "%") {
+                if (secondNumber === 0 || secondNumber === 0.0) {
+                    alert("Division by zero");
+                    return;
+                }
             }
+            let result = "";
+            switch (operation) {
+                case "+":
+                    result = `${firstNumber + secondNumber}`;
+                    break;
+                case "-":
+                    result = `${firstNumber - secondNumber}`;
+                    break;
+                case "∗":
+                    result = `${firstNumber * secondNumber}`;
+                    break;
+                case "/":
+                    result = `${firstNumber / secondNumber}`;
+                    break;
+                case "%":
+                    result = `${firstNumber % secondNumber}`;
+                    break;
+                case "^":
+                    result = `${Math.pow(firstNumber, secondNumber)}`;
+                    break;
+            }
+
+            const resultStr = `${firstNumber} ${operation} ${secondNumber} = ${Number(result).toFixed(6)}`;
+            console.log(resultStr);
+            setResult(resultStr);
         }
-        let result = "";
-        switch (operation) {
-            case "+":
-                result = `${firstNumber + secondNumber}`;
-                break;
-            case "-":
-                result = `${firstNumber - secondNumber}`;
-                break;
-            case "∗":
-                result = `${firstNumber * secondNumber}`;
-                break;
-            case "/":
-                result = `${firstNumber / secondNumber}`;
-                break;
-            case "%":
-                result = `${firstNumber % secondNumber}`;
-                break;
-            case "^":
-                result = `${Math.pow(firstNumber, secondNumber)}`;
-                break;
-        }
-        setResult(loggingInfo(firstNumber, operation, secondNumber, result));
+
+
     }
 }
 
